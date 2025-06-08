@@ -2,7 +2,7 @@ package Day1;
 
 import java.util.Scanner;
 
-public class ATM {
+public class Atm {
 
 	public static void main(String[] args) {
 	
