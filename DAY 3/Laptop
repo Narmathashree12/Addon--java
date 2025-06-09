@@ -1,0 +1,22 @@
+package program;
+
+public class Laptop {
+    String modelname;
+    int ramsize;
+    
+    // parameterized constructor
+    public Laptop(String modelname, int ramsize) {
+        this.modelname = modelname;
+        this.ramsize = ramsize;
+    }
+    
+    void display() {
+        System.out.println("Laptop model: " + modelname + ", RAM size: " + ramsize + "GB");
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("Parameterized constructor");
+        Laptop laptop = new Laptop("Dell", 8); // Assuming RAM size is 8GB
+        laptop.display();
+    }
+}
