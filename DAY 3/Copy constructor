@@ -28,7 +28,7 @@ public class Defaultconstructor
     public static void main(String[] args)
     {
         System.out.println("original constructor");
-        Defaultconstructor ref = new Defaultconstructor("java", 2005, "programming");
+        Defaultconstructor ref = new Defaultconstructor("java", 1995, "programming");
         ref.display();
         
         System.out.println("copy constructor");
