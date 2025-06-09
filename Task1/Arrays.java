@@ -1,5 +1,7 @@
 package Task1;
 
+import java.util.scanner;
+	
 public class Arrays {
 
 		public static void main(String[] args) {
