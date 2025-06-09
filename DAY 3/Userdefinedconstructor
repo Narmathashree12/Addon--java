@@ -5,16 +5,20 @@ public class Defaultconstructor
     String language;
     String name;
     int year;
-    
-    Defaultconstructor(String name,int year,String lang)
+
+    // User-defined constructor
+
+    Defaultconstructor(String name, int year, String lang)
     {
-        this.name=name;
-        this.year=year;
-        this.language=lang;
+        this.name = name;
+        this.year = year;
+        this.language = lang;
     }
+
     void display(){
         System.out.println("userdefine constructor" +" " +name+""+year);   
     }
+
     public static void main(String[] args)
     {
         System.out.println("original constructor");
