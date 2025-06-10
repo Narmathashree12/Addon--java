@@ -1,0 +1,44 @@
+import java.util.*;
+class sbiacc{
+    private String accholder;
+    private int balance;
+    sbiacc(String accholder,int balance){
+        this.accholder=accholder;
+        this.balance=balance;
+    }
+     
+    public String getaccholder(){
+        return accholder;
+    }
+    public int getbalance(){
+        return balance;
+    }
+     
+    public void deposit(int dep){
+        if(balance>0){
+            balance+=dep;
+            System.out.println("deposite amount:"+dep);
+            System.out.println("now current balance:"+balance);
+        }
+    }
+    public void setaccholder(String accholder){
+        this.accholder=accholder;
+    }
+    public void setwithdraw(int withdraw){
+       balance -=withdraw;
+    }
+}
+    public class bankdetails{
+        public static void main(String[] args) {
+        sbiacc ac=new sbiacc("john",20000);
+        System.out.println("account holder name:"+ac.getaccholder());
+        ac.setaccholder("pavithra");
+        System.out.println("update  account holder :"+ac.getaccholder());
+        System.out.println("balance:"+ac.getbalance());
+        ac.deposit(3000);
+       ac.setwithdraw(2000);
+       System.out.println("withdrawn amount:"+ac.getbalance);
+    }
+    
+    
+}
