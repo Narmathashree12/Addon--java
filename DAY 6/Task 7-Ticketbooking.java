@@ -13,9 +13,9 @@ class TicketCounter {
             }
 
             availableTickets -= requested;
-            System.out.println("✅ " + user + " booked " + requested + " ticket(s).");
+            System.out.println("ok " + user + " booked " + requested + " ticket(s).");
         } else {
-            System.out.println("❌ Not enough tickets for " + user + ". Booking failed.");
+            System.out.println(" Not enough tickets for " + user + ". Booking failed.");
         }
 
         System.out.println("🎫 Remaining tickets: " + availableTickets + "\n");
