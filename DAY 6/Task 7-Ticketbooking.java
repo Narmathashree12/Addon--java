@@ -18,7 +18,7 @@ class TicketCounter {
             System.out.println(" Not enough tickets for " + user + ". Booking failed.");
         }
 
-        System.out.println("🎫 Remaining tickets: " + availableTickets + "\n");
+        System.out.println(" Remaining tickets: " + availableTickets + "\n");
     }
 }
 
@@ -44,7 +44,7 @@ public class TicketBookingApp {
 
         UserThread u1 = new UserThread(counter, "Narmatha", 2);
         UserThread u2 = new UserThread(counter, "Shree", 3);
-        UserThread u3 = new UserThread(counter, "Kumar", 1);
+        UserThread u3 = new UserThread(counter, "hai", 1);
 
         u1.start();
         u2.start();
