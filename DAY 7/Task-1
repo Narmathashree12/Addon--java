@@ -7,10 +7,10 @@ Database changed
 create table Student(name varchar(30),age int,rollno int);
 Query OK, 0 rows affected (0.02 sec)
 
-mysql>  insert into Student(name,age,class)values('narmatha',12, 34);
+mysql>  insert into Student(name,age,rollno)values('narmatha',12, 34);
 Query OK, 1 row affected (0.00 sec)
 
-mysql> insert into Student(name,age,class)values('shree',13, 45);
+mysql> insert into Student(name,age,rollno)values('shree',13, 45);
 Query OK, 1 row affected (0.00 sec)
 
 mysql> select*from Student;
