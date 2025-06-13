@@ -4,10 +4,10 @@ Query OK, 1 row affected (0.01 sec)
 mysql> use narmatha;
 Database changed
 
-mysql> create table narmatha(Tname varchar(20),tsalary int);
+mysql> create table  Trainer(Tname varchar(20),tsalary int);
 Query OK, 0 rows affected (0.02 sec)
 
-mysql> insert into narmatha(Tname,tsalary)values('john',2000);
+mysql> insert into  Trainer(Tname,tsalary)values('john',2000);
 Query OK, 1 row affected (0.00 sec)
 
 mysql> select*from narmatha;
