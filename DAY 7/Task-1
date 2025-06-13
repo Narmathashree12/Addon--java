@@ -1,26 +1,41 @@
-create database narmatha;
+mysql> create database demo;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> use demo;
+Database changed
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+
+| students           |             |
++--------------------+
+1 rows in set (0.07 sec)
+
+mysql> create table student(name varchar(30),rollno int,phoneno int,email varchar(30), dateofbirth date);
+Query OK, 0 rows affected (0.05 sec)
+
+mysql>  insert into student values('narmatha',29,765297,'narmatha12','2005-07-12');
 Query OK, 1 row affected (0.01 sec)
 
-mysql> use narmatha;
-Database changed
+mysql> select*from student;
++----------+--------+---------+------------+-------------+
+| name     | rollno | phoneno | email      | dateofbirth |
++----------+--------+---------+------------+-------------+
+| narmatha |     29 |  765297 | narmatha12 | 2005-07-12  |
++----------+--------+---------+------------+-------------+
+1 row in set (0.00 sec)
 
-create table Student(name varchar(30),age int,rollno int,email varchar(90),phonenumber int);
-Query OK, 0 rows affected (0.02 sec)
+mysql> create table course(course_name varchar(30),duration varchar(30),course_fees int);
+Query OK, 0 rows affected (0.03 sec)
 
-mysql>  insert into Student(name,age,rollno)values('narmatha',12, 34);
-Query OK, 1 row affected (0.00 sec)
+mysql> insert into course values('Bsc computer technology','3 years',45000);
+Query OK, 1 row affected (0.04 sec)
 
-mysql> insert into Student(name,age,rollno)values('shree',13, 45);
-Query OK, 1 row affected (0.00 sec)
-
-mysql> select*from Student;
-+----------+------+---------------------+
-| name     | age  | roll no              |
-+----------+------+---------------------+
-| narmatha |   12 | 34|
-| shree    |   13 | 45 |
-+----------+------+---------------------+
-2 rows in set (0.00 sec)
-
-create student and course tables(course for fees column
-insert 5 records
+mysql> select*from course;
++-------------------------+----------+-------------+
+| course_name             | duration | course_fees |
++-------------------------+----------+-------------+
+| Bsc computer technology | 3 years  |       45000 |
++-------------------------+----------+-------------+
+1 row in set (0.00 sec)
