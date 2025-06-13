@@ -4,21 +4,21 @@ Query OK, 1 row affected (0.01 sec)
 mysql> use narmatha;
 Database changed
 
-create table Student(name varchar(30),age int,class varchar(34));
+create table Student(name varchar(30),age int,rollno int);
 Query OK, 0 rows affected (0.02 sec)
 
-mysql>  insert into Student(name,age,class)values('narmatha',12,'computer technology');
+mysql>  insert into Student(name,age,class)values('narmatha',12, 34);
 Query OK, 1 row affected (0.00 sec)
 
-mysql> insert into Student(name,age,class)values('shree',13,'computer science');
+mysql> insert into Student(name,age,class)values('shree',13, 45);
 Query OK, 1 row affected (0.00 sec)
 
 mysql> select*from Student;
 +----------+------+---------------------+
-| name     | age  | class               |
+| name     | age  | roll no              |
 +----------+------+---------------------+
-| narmatha |   12 | computer technology |
-| shree    |   13 | computer science    |
+| narmatha |   12 | 34|
+| shree    |   13 | 45 |
 +----------+------+---------------------+
 2 rows in set (0.00 sec)
 
