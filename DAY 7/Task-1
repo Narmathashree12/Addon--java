@@ -4,19 +4,23 @@ Query OK, 1 row affected (0.01 sec)
 mysql> use narmatha;
 Database changed
 
-mysql> create table  Trainer(Tname varchar(20),tsalary int);
+create table Student(name varchar(30),age int,class varchar(34));
 Query OK, 0 rows affected (0.02 sec)
 
-mysql> insert into  Trainer(Tname,tsalary)values('john',2000);
+mysql>  insert into Student(name,age,class)values('narmatha',12,'computer technology');
 Query OK, 1 row affected (0.00 sec)
 
-mysql> select*from narmatha;
-+-------+---------+
-| Tname | tsalary |
-+-------+---------+
-| john  |    2000 |
-+-------+---------+
-1 row in set (0.00 sec)
+mysql> insert into Student(name,age,class)values('shree',13,'computer science');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from Student;
++----------+------+---------------------+
+| name     | age  | class               |
++----------+------+---------------------+
+| narmatha |   12 | computer technology |
+| shree    |   13 | computer science    |
++----------+------+---------------------+
+2 rows in set (0.00 sec)
 
 create student and course tables(course for fees column
 insert 5 records
