@@ -17,3 +17,6 @@ mysql> select*from narmatha;
 | john  |    2000 |
 +-------+---------+
 1 row in set (0.00 sec)
+
+create student and course tables(course for fees column
+insert 5 records
