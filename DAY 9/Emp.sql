@@ -4,6 +4,16 @@ mysql> insert into employee28 values(232235,'Narmatha','computer technology',250
 mysql> insert into employee28 values(232240,'shree','computer science',250400,'2023-01-04');
 mysql> insert into employee28 values(234567,'swetha','finance',320001,'2023-06-13');
 mysql> insert into employee28 values(234578,'sanjana','web',120000,'2016-11-08');
+mysql> desc emp;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| empid      | int         | YES  |     | NULL    |       |
+| name       | varchar(25) | YES  |     | NULL    |       |
+| department | varchar(25) | YES  |     | NULL    |       |
+| salary     | int         | YES  |     | NULL    |       |
+| joindate   | date        | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
 mysql> select*from employee28;
 +--------+----------+------------------------+--------+------------+
 | empid  | name     | dept                   | salary | joindate   |
