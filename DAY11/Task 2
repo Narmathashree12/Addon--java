@@ -1,0 +1,39 @@
+mysql> create table employee (id int,name varchar(30),dept varchar(90),salary int);
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> desc employee;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | int         | YES  |     | NULL    |       |
+| name   | varchar(30) | YES  |     | NULL    |       |
+| dept   | varchar(90) | YES  |     | NULL    |       |
+| salary | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+mysql> insert into employee values(1,'narmatha','IT',450000),(2,'shree','ITT',440000),(3,'swe','maya',120000),(4,'danu','photoshop',4500);
+
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select*from employee;
++------+----------+-----------+--------+
+| id   | name     | dept      | salary |
++------+----------+-----------+--------+
+|    1 | narmatha | IT        | 450000 |
+|    2 | shree    | ITT       | 440000 |
+|    3 | swe      | maya      | 120000 |
+|    4 | danu     | photoshop |   4500 |
++------+----------+-----------+--------+
+4 rows in set (0.03 sec)
+
+mysql> select dept,avg(salary) as Average_salary from employee group by dept;
++-----------+----------------+
+| dept      | Average_salary |
++-----------+----------------+
+| IT        |    450000.0000 |
+| ITT       |    440000.0000 |
+| maya      |    120000.0000 |
+| photoshop |      4500.0000 |
++-----------+----------------+
+4 rows in set (0.03 sec)
