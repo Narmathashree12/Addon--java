@@ -176,3 +176,66 @@ mysql> select sum(sal) from emp group by job;
 |  6000.00 |
 |  5000.00 |
 +----------+
+mysql> select count(*) from emp group by hiredate;
++----------+
+| count(*) |
++----------+
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        1 |
+|        2 |
+|        1 |
++----------+
+
+
+mysql> select sum(sal)from emp group by job having sum(sal)>5000;
++----------+
+| sum(sal) |
++----------+
+|  5600.00 |
+|  8275.00 |
+|  6000.00 |
++----------+
+
+
+mysql> select sum(sal),job from emp group by job having sum(sal)>5000;
++----------+----------+
+| sum(sal) | job      |
++----------+----------+
+|  5600.00 | SALESMAN |
+|  8275.00 | MANAGER  |
+|  6000.00 | ANALYST  |
++----------+----------+
+
+
+mysql> select count(*),deptno from emp where job='clerk'group by deptno having count(*)>=2;
++----------+--------+
+| count(*) | deptno |
++----------+--------+
+|        2 |     20 |
++----------+--------+
+mysql> select avg(sal)from emp group by deptno having avg(sal)>=2000;
++-------------+
+| avg(sal)    |
++-------------+
+| 2175.000000 |
+| 2916.666667 |
++-------------+
+
+mysql> select sum(comm)from emp group by job having sum(comm)>1000;
++-----------+
+| sum(comm) |
++-----------+
+|   2200.00 |
++-----------+
+
+
+
