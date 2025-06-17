@@ -1,3 +1,9 @@
+mysql> create database employee;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use employee;
+Database changed
+
 mysql> create table employee (id int,name varchar(30),dept varchar(90),salary int);
 Query OK, 0 rows affected (0.05 sec)
 
@@ -11,6 +17,7 @@ mysql> desc employee;
 | salary | int         | YES  |     | NULL    |       |
 +--------+-------------+------+-----+---------+-------+
 4 rows in set (0.00 sec)
+
 mysql> insert into employee values(1,'narmatha','IT',450000),(2,'shree','ITT',440000),(3,'swe','maya',120000),(4,'danu','photoshop',4500);
 
 Query OK, 4 rows affected (0.01 sec)
