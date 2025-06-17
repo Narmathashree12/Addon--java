@@ -1,7 +1,10 @@
 mysql> create database student;
 Query OK, 1 row affected (0.01 sec)
 
-mysql> use studentmysql> create table student(name varchar(30),rollno int,phoneno int,email varchar(30), course varchar(90));
+mysql> use student
+Database changed
+
+mysql> create table student(name varchar(30),rollno int,phoneno int,email varchar(30), course varchar(90));
 Query OK, 0 rows affected (0.07 sec)
 
 mysql> desc student;
