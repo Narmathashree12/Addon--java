@@ -52,11 +52,11 @@ mysql> select*from courses order by fees asc;
 +-----------+-------------------------+-------+
 | course_id | course_name             | fees  |
 +-----------+-------------------------+-------+
-|       347 | AI&DS                   | 50000 |
 |       347 | bcom                    | 12000 |
 |       345 | computer science        | 30000 |
-|       346 | computer technology     | 45500 |
 |       345 | english                 | 45000 |
 |       345 | science                 | 45000 |
+|       346 | computer technology     | 45500 |
+|       347 | AI&DS                   | 50000 |
 +-----------+-------------------------+-------+
 10 rows in set (0.00 sec)
