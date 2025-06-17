@@ -1,0 +1,36 @@
+mysql> create database student;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use student;
+Database changed
+
+mysql> create table student(studentid int,name varchar(90),marks int);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into student values(1,'narmatha',98);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student values(1,'shree',88);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into student values(1,'swetha',67);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from student;
++-----------+----------+-------+
+| studentid | name     | marks |
++-----------+----------+-------+
+|         1 | narmatha |    98 |
+|         1 | shree    |    88 |
+|         1 | swetha   |    67 |
++-----------+----------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select*from student where marks>80;
++-----------+----------+-------+
+| studentid | name     | marks |
++-----------+----------+-------+
+|         1 | narmatha |    98 |
+|         1 | shree    |    88 |
++-----------+----------+-------+
+2 rows in set (0.00 sec)
