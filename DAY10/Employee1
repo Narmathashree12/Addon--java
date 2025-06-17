@@ -182,6 +182,47 @@ mysql> select ename from emp where ename like 'c%k';
 +-------+
 | CLARK |
 +-------+
+ select ename from emp where ename not like 'c%k';
++--------+
+| ename  |
++--------+
+| SMITH  |
+| ALLEN  |
+| WARD   |
+| JONES  |
+| MARTIN |
+| BLAKE  |
+| SCOTT  |
+| KING   |
+| TURNER |
+| ADAMS  |
+| JAMES  |
+| FORD   |
+| MILLER |
++--------+
+mysql> select ename  from emp where ename like 'a___n';
++-------+
+| ename |
++-------+
+| ALLEN |
++-------+
+mysql> select ename,sal from emp where sal like'_______';
++--------+---------+
+| ename  | sal     |
++--------+---------+
+| ALLEN  | 1600.00 |
+| WARD   | 1250.00 |
+| JONES  | 2975.00 |
+| MARTIN | 1250.00 |
+| BLAKE  | 2850.00 |
+| CLARK  | 2450.00 |
+| SCOTT  | 3000.00 |
+| KING   | 5000.00 |
+| TURNER | 1500.00 |
+| ADAMS  | 1100.00 |
+| FORD   | 3000.00 |
+| MILLER | 1300.00 |
++--------+---------+
 
 
 
