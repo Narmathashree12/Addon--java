@@ -1,18 +1,109 @@
 mysql> create database employee;
+Query OK, 1 row affected (0.01 sec)
 
 mysql> use employee;
 Database changed
 
-mysql>  CREATE TABLE employee ( empno int , ename varchar(10),  job varchar(9),hiredate date);
+mysql> create table employee(employee_id int primary key,employee_name varchar(90),employee_salary int);
+Query OK, 0 rows affected (0.04 sec)
 
-mysql> desc emp;
-+----------+--------------+------+-----+---------+-------+
-| Field    | Type         | Null | Key | Default | Extra |
-+----------+--------------+------+-----+---------+-------+
-| empno    | decimal(4,0) | NO   |     | NULL    |       |
-| ename    | varchar(10)  | YES  |     | NULL    |       |
-| job      | varchar(9)   | YES  |     | NULL    |       |
-| mgr      | decimal(4,0) | YES  |     | NULL    |       |
-| hiredate | date         | YES  |     | NULL    |       |
-+----------+--------------+------+-----+---------+-------+
-5 rows in set (0.04 sec)
+mysql> desc employee;
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| employee_id     | int         | NO   | PRI | NULL    |       |
+| employee_name   | varchar(90) | YES  |     | NULL    |       |
+| employee_salary | int         | YES  |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+3 rows in set (0.06 sec)
+
+mysql> insert into employee values(12,'yasotha',2000000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into employee values(13,'murthy',5000000);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into employee values(14,'narmatha',988882);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into employee values(15,'shree',1234);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select*from employee;
++-------------+---------------+-----------------+
+| employee_id | employee_name | employee_salary |
++-------------+---------------+-----------------+
+|          12 | yasotha       |         2000000 |
+|          13 | murthy        |         5000000 |
+|          14 | narmatha      |          988882 |
+|          15 | shree         |            1234 |
++-------------+---------------+-----------------+
+4 rows in set (0.00 sec)
+
+mysql> select employee_id from employee;
++-------------+
+| employee_id |
++-------------+
+|          12 |
+|          13 |
+|          14 |
+|          15 |
++-------------+
+4 rows in set (0.00 sec)
+
+mysql> select* from employee where employee_name='yasotha';
++-------------+---------------+-----------------+
+| employee_id | employee_name | employee_salary |
++-------------+---------------+-----------------+
+|          12 | yasotha       |         2000000 |
++-------------+---------------+-----------------+
+1 row in set (0.00 sec)
+
+mysql> select*from employee where employee_salary> 1234 and employee_id=13;
++-------------+---------------+-----------------+
+| employee_id | employee_name | employee_salary |
++-------------+---------------+-----------------+
+|          13 | murthy        |         5000000 |
++-------------+---------------+-----------------+
+1 row in set (0.00 sec)
+
+mysql>  select*from employee order by employee_id desc;
++-------------+---------------+-----------------+
+| employee_id | employee_name | employee_salary |
++-------------+---------------+-----------------+
+|          15 | shree         |            1234 |
+|          14 | narmatha      |          988882 |
+|          13 | murthy        |         5000000 |
+|          12 | yasotha       |         2000000 |
++-------------+---------------+-----------------+
+4 rows in set (0.00 sec)
+
+mysql> select employee_name from employee order by employee_salary desc;
++---------------+
+| employee_name |
++---------------+
+| murthy        |
+| yasotha       |
+| narmatha      |
+| shree         |
++---------------+
+4 rows in set (0.00 sec)
+
+mysql> select*from employee order by employee_salary desc, employee_name asc;
++-------------+---------------+-----------------+
+| employee_id | employee_name | employee_salary |
++-------------+---------------+-----------------+
+|          13 | murthy        |         5000000 |
+|          12 | yasotha       |         2000000 |
+|          14 | narmatha      |          988882 |
+|          15 | shree         |            1234 |
++-------------+---------------+-----------------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT * FROM employee where employee_name='murthy' order by employee_salary desc;
++-------------+---------------+-----------------+
+| employee_id | employee_name | employee_salary |
++-------------+---------------+-----------------+
+|          13 | murthy        |         5000000 |
++-------------+---------------+-----------------+
+1 row in set (0.00 sec)
