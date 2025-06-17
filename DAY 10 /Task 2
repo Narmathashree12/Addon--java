@@ -1,0 +1,62 @@
+mysql> create database courses ;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use courses;
+Database changed
+
+mysql> create table courses(course_id int,course_name varchar(90),fees int);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc courses;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| course_id   | int         | YES  |     | NULL    |       |
+| course_name | varchar(90) | YES  |     | NULL    |       |
+| fees        | int         | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into courses values(345,'science',45000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into courses values(345,'english',45000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into courses values(345,'computer science',30000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into courses values(346,'computer technology',45500);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into courses values(347,'AI&DS',50000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into courses values(347,'bcom',12000);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select*from courses;
++-----------+-------------------------+-------+
+| course_id | course_name             | fees  |
++-----------+-------------------------+-------+
+|       345 | science                 | 45000 |
+|       345 | english                 | 45000 |
+|       345 | computer science        | 30000 |
+|       346 | computer technology     | 45500 |
+|       347 | AI&DS                   | 50000 |
+|       347 | bcom                    | 12000 |
++-----------+-------------------------+-------+
+10 rows in set (0.00 sec)
+
+mysql> select*from courses order by fees asc;
++-----------+-------------------------+-------+
+| course_id | course_name             | fees  |
++-----------+-------------------------+-------+
+|       347 | AI&DS                   | 50000 |
+|       347 | bcom                    | 12000 |
+|       345 | computer science        | 30000 |
+|       346 | computer technology     | 45500 |
+|       345 | english                 | 45000 |
+|       345 | science                 | 45000 |
++-----------+-------------------------+-------+
+10 rows in set (0.00 sec)
