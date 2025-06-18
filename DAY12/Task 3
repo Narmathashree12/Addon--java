@@ -1,0 +1,62 @@
+mysql> create database customers;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> use customers;
+Database changed
+
+mysql>  create table customers(customer_id int,name varchar(90),city varchar(90));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc  customers;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| customer_id | int         | YES  |     | NULL    |       |
+| name        | varchar(90) | YES  |     | NULL    |       |
+| city        | varchar(90) | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+mysql> insert into customers values(12,'narmatha','bangalore'),(13,'shree','coimbatore'),(14,'swetha','cbe');
+Query OK, 3 rows affected (0.04 sec)
+
+mysql> select*from customers;
++-------------+----------+------------+
+| customer_id | name     | city       |
++-------------+----------+------------+
+|          12 | narmatha | bangalore  |
+|          13 | shree    | coimbatore |
+|          14 | swetha   | cbe        |
++-------------+----------+------------+
+
+mysql> create table orders(order_id int,customer_id int,total_amount int);
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc orders;
++--------------+------+------+-----+---------+-------+
+| Field        | Type | Null | Key | Default | Extra |
++--------------+------+------+-----+---------+-------+
+| order_id     | int  | YES  |     | NULL    |       |
+| customer_id  | int  | YES  |     | NULL    |       |
+| total_amount | int  | YES  |     | NULL    |       |
++--------------+------+------+-----+---------+-------+
+mysql> insert into orders values(101,12,90000),(102,13,80000),(103,14,21000);
+
+mysql> select*from orders;
++----------+-------------+--------------+
+| order_id | customer_id | total_amount |
++----------+-------------+--------------+
+|      101 |          12 |        90000 |
+|      102 |          13 |        80000 |
+|      103 |          14 |        21000 |
++----------+-------------+--------------+
+mysql> SELECT customers.customer_id, customers.name, customers.city,
+    -> orders.order_id, orders.total_amount
+    -> FROM customers
+    -> JOIN orders ON customers.customer_id = orders.customer_id;
++-------------+----------+------------+----------+--------------+
+| customer_id | name     | city       | order_id | total_amount |
++-------------+----------+------------+----------+--------------+
+|          12 | narmatha | bangalore  |      101 |        90000 |
+|          13 | shree    | coimbatore |      102 |        80000 |
+|          14 | swetha   | cbe        |      103 |        21000 |
++-------------+----------+------------+----------+--------------+
