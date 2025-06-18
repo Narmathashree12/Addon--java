@@ -309,6 +309,19 @@ mysql> select dname,sal from emp,dept where emp.deptno=dept.deptno and dname='ac
 | ACCOUNTING | 5000.00 |
 | ACCOUNTING | 1300.00 |
 +------------+---------+
+mysql> select * from emp
+    -> where sal =(select min(sal)
+    -> from emp
+    -> where sal >(select min(sal)
+    -> from emp
+    -> where sal >(select min(sal)
+    -> from emp)));
++-------+-------+-------+------+------------+---------+------+--------+
+| empno | ename | job   | mgr  | hiredate   | sal     | comm | deptno |
++-------+-------+-------+------+------------+---------+------+--------+
+|  7876 | ADAMS | CLERK | 7788 | 1983-01-12 | 1100.00 | NULL |     20 |
++-------+-------+-------+------+------------+---------+------+--------+
+
 mysql> select* from emp left outer join dept on emp.deptno=dept.deptno;
 +-------+--------+-----------+------+------------+---------+---------+--------+--------+------------+----------+
 | empno | ename  | job       | mgr  | hiredate   | sal     | comm    | deptno | deptno | dname      | loc      |
@@ -338,4 +351,5 @@ mysql> select  e1.ename emp_name,e2.sal mgr_sal from emp e1,emp e2 where e1.mgr=
 | BLAKE    | 5000.00 |
 | JONES    | 5000.00 |
 +----------+---------+
+
 
