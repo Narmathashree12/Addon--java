@@ -1,0 +1,21 @@
+SELECT s.name, m.student_id, m.total_marks
+FROM students s
+JOIN (
+    SELECT student_id, SUM(marks) AS total_marks
+    FROM marks
+    GROUP BY student_id
+) m ON s.student_id = m.student_id
+WHERE m.total_marks = (
+    SELECT MAX(total_sum)
+    FROM (
+        SELECT student_id, SUM(marks) AS total_sum
+        FROM marks
+        GROUP BY student_id
+    ) AS sub
+);
+
++----------+-------------+-------------+
+| name     | students_id | total_marks |
++----------+-------------+-------------+
+| narmatha |           1 |          99 |
++----------+-------------+-------------+
