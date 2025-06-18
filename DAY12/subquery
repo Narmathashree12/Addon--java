@@ -102,6 +102,12 @@ mysql> select ename from emp where deptno=(select deptno from emp where ename='s
 | ADAMS |
 | FORD  |
 +-------+
+mysql> select*from emp where sal=(select max(sal) from emp);
++-------+-------+-----------+------+------------+---------+------+--------+
+| empno | ename | job       | mgr  | hiredate   | sal     | comm | deptno |
++-------+-------+-----------+------+------------+---------+------+--------+
+|  7839 | KING  | PRESIDENT | NULL | 1981-11-17 | 5000.00 | NULL |     10 |
++-------+-------+-----------+------+------------+---------+------+--------+
 
 mysql> select ename from emp where sal>(select sal from emp where ename='smith');
 +--------+
