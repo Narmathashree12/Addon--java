@@ -1,3 +1,58 @@
+mysql> create database students;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> use students;
+Database changed
+
+mysql> create table students (students_id int,name varchar(90),class varchar(1));
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc students;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| students_id | int         | YES  |     | NULL    |       |
+| name        | varchar(90) | YES  |     | NULL    |       |
+| class       | varchar(1)  | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+mysql> insert into students values(1,'narmatha','A'),(2,'shree','B'),(3,'swetha','C');
+Query OK, 3 rows affected (0.03 sec)
+
+mysql> select*from students;
++-------------+----------+-------+
+| students_id | name     | class |
++-------------+----------+-------+
+|           1 | narmatha | A     |
+|           2 | shree    | B     |
+|           3 | swetha   | C     |
++-------------+----------+-------+
+mysql> create table marks(mark_id int,students_id int,subject varchar(90),marks int);
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc marks;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| mark_id     | int         | YES  |     | NULL    |       |
+| students_id | int         | YES  |     | NULL    |       |
+| subject     | varchar(90) | YES  |     | NULL    |       |
+| marks       | int         | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+mysql> insert into marks values(12,1,'computer',99),(13,2,'english',98),(14,3,'science',97);
+Query OK, 3 rows affected (0.03 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select *from marks;
++---------+-------------+----------+-------+
+| mark_id | student_id | subject  | marks |
++---------+-------------+----------+-------+
+|      12 |           1 | computer |    99 |
+|      13 |           2 | english  |    98 |
+|      14 |           3 | science  |    97 |
++---------+-------------+----------+-------+
+
 SELECT s.name, m.student_id, m.total_marks
 FROM students s
 JOIN (
