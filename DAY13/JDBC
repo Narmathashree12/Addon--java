@@ -1,0 +1,79 @@
+package mysql;
+ import java.sql.*;
+public class jdbcMain {
+
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+	     String Url="jdbc:mysql://localhost:3306/emp";
+	     String userName="root";
+	     String Password="";
+	     
+		Connection connect =DriverManager.getConnection(Url,userName,Password);
+	   	//Class.forName("com.mysql.cj.jdbc.Driver");{
+		
+		
+			System.out.println("Driver Loaded");
+			
+		//	Statement st=connect.createStatement();
+			
+			         //CREATING THE VALUES
+			
+		//	String sql="create table course(cid int, cname varchar(20))";
+			
+		//	int val=st.executeUpdate(sql);
+			
+		//	System.out.println("Table created successfully...");
+			
+			
+			       //   INSERING THE VALUES
+		 
+		//	String sql="insert into course values(01,'FSD')";
+			
+		//	int val=st.executeUpdate(sql);
+			
+		//	System.out.println("inserted "+ " " + val+ " rows");
+			
+			   
+			      // UPDATING THE VALUES
+			
+		//	String sql ="Update course set cname ='WD' where cid=01";
+		 
+		//	int val=st.executeUpdate(sql);
+			
+		//	System.out.println("Updated" + " " +val+ "rows");
+			
+			       //DROPING THE TABLE
+			
+		//	String sql ="Drop table course";
+			 
+		//	int val=st.executeUpdate(sql);
+			
+		//	System.out.println("deleted successfully...");
+			
+			
+		//	System.out.println("created"+" "+val+" ");
+	    //	ResultSet rs=st.executeQuery(sql);
+		// rs.next();
+		// System.out.println(rs.getInt(1) +" "+rs.getString(2) +" "+rs.getString(3));
+		// rs.next();
+	   //System.out.println(rs.getInt(1) +" "+rs.getString(2) +" "+rs.getString(3));
+	   //while(rs.next()) { System.out.println(rs.getString(1));
+	    //	}
+			
+			
+			int cid =03;
+			String cname="IMS";
+			
+			String sql="insert into course values(?,?)";
+			PreparedStatement st =connect.prepareStatement(sql);
+			st.setInt(1, cid);
+			st.setString(2, cname);
+			st.executeUpdate();
+			System.out.println("Record inserted successfully using preparestatement");
+			
+			
+			
+			
+			
+		}
+	}
+
